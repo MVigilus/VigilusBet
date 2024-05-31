@@ -1,0 +1,41 @@
+<section class="content">
+  <div class="content-block">
+    <div class="block-header">
+      <!-- breadcrumb -->
+      <app-breadcrumb [title]="'Dashboad'" [items]="['Home']" [active_item]="'Dashboard'"></app-breadcrumb>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl col-lg col-md"></div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+          @if (matches && matches.length!=0){
+            @for(match of matches;track match){
+              <div>
+                <h3>{{ match.event.name }}</h3>
+                <button (click)="placeBet(match.marketId, match.runners[0].selectionId)">Scommetti sulla squadra 1</button>
+                <button (click)="placeBet(match.marketId, match.runners[1].selectionId)">Scommetti sulla squadra 2</button>
+              </div>
+            }
+            <!--<div class="card">
+              <div class="header">
+                <div class="container-fluid " >
+                  <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="body">
+                <div class="container-fluid">
+
+                </div>
+              </div>
+            </div>-->
+          }
+        </div>
+        <div class="col-xl col-lg col-md"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
